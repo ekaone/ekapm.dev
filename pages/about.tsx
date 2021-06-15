@@ -50,7 +50,7 @@ export const AboutPage = () => {
   return (
     <>
       <SectionHeadline>
-        Hello, I am Eka{" "}
+        Hello, I am Eka Prasetia{" "}
         <span role="img" aria-label="waving hand">
           👋
         </span>

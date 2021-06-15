@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { useRouter } from "next/router";
-import { HStack, Link, BoxProps, Button } from "@chakra-ui/react";
+import { HStack, Link, BoxProps } from "@chakra-ui/react";
 
 const links = [
   {
@@ -33,26 +33,6 @@ export const Navigation = ({ ...restProps }: BoxProps) => {
           </Link>
         </NextLink>
       ))}
-      <NextLink key="/started" href="/started" passHref={true}>
-        <Button
-          as={Link}
-          border="1px"
-          px={2}
-          py={2}
-          color="brandGreen.500"
-          variant="outline"
-          _hover={{
-            textDecoration: "none",
-            bgGradient: "linear(to-l, #7928CA, #FF0080)",
-          }}
-          css={{ transition: "all 0.3s ease-in-out" }}
-          bg={pathname === "/started" ? "gray.900" : "inherit"}
-          textTransform="uppercase"
-          fontWeight="bold"
-        >
-          Get Started
-        </Button>
-      </NextLink>
     </HStack>
   );
 };
