@@ -1,88 +1,112 @@
-import NextLink from "next/link";
-import { MdArrowForward } from "react-icons/md";
 import {
   Text,
-  Alert,
-  AlertIcon,
   Box,
-  AlertTitle,
-  AlertDescription,
-  Stack,
   Link,
-  Button,
+  Stack,
+  Flex,
+  SimpleGrid,
+  List,
+  ListIcon,
+  ListItem,
 } from "@chakra-ui/react";
-
+import { MdDone } from "react-icons/md";
+// components
 import { SectionHeadline } from "../components/section-headline";
+import { Avatar } from "../components/avatar";
 
-const WhoIAm = () => {
+interface SkillsType {
+  map: any;
+  title?: string | null;
+  knowledge?: string[] | null;
+}
+[];
+
+const skills: SkillsType = [
+  {
+    title: "Languages",
+    knowledge: ["CSS & HTML", "JavaScript", "Typescript"],
+  },
+  {
+    title: "Frontend",
+    knowledge: ["React", "Next.js", "Gatsby.js", "Hugo"],
+  },
+  ,
+  {
+    title: "Design",
+    knowledge: ["CSS", "Chakra UI", "Tailwind CSS", "CSS in JS"],
+  },
+  {
+    title: "Testing",
+    knowledge: [
+      "Unit Testing",
+      "E2E Testing",
+      "React Testing Library",
+      "Cypress",
+    ],
+  },
+];
+
+export const AboutPage = () => {
   return (
     <>
-      <SectionHeadline>Garden IoT</SectionHeadline>
+      <SectionHeadline>
+        Hello, I am Eka{" "}
+        <span role="img" aria-label="waving hand">
+          👋
+        </span>
+      </SectionHeadline>
+      <Flex direction={["column", "column", "row"]} mb={{ base: 12, md: 0 }}>
+        <Stack spacing={6} maxW={"2xl"} order={[2, 2, 1]}>
+          <Text
+            fontSize={"xl"}
+            as={"em"}
+            bgGradient="linear(to-l, #7928CA,#FF0080)"
+            bgClip="text"
+            fontWeight="extrabold"
+          >
+            I design and build Fullstack Development from Indonesia.
+          </Text>
 
-      <Text mb={6} fontSize={"lg"}>
-        Here are some of short description about Garden IoT.
-      </Text>
+          <Text fontSize={"lg"}>
+            Outside of the regular work I spend my time{" "}
+            <Link href={"https://github.com/ekaone/"}>
+              contribute to open source projects
+            </Link>
+            , also read widely and try new things
+          </Text>
+        </Stack>
+        <Box minW={300} mx={"auto"} mb={{ base: 12, md: 0 }} order={[1, 1, 2]}>
+          <Avatar />
+        </Box>
+      </Flex>
 
-      <Stack spacing={5}>
-        <Alert status="success" rounded={"md"}>
-          <AlertIcon />
-          <Box flex="1">
-            <AlertTitle>Monitoring!</AlertTitle>
-            <AlertDescription display="block">
-              Garden IoT use{" "}
-              <Link
-                href="https://www.raspberrypi.org/"
-                color={"brandGreen.500"}
-                target="_blank"
-              >
-                Raspberry PI{" "}
-              </Link>
-              as controller interface{" "}
-              <span role="img" aria-label="pc">
-                💻
-              </span>
-            </AlertDescription>
-          </Box>
-        </Alert>
-        <Alert status="success" rounded={"md"}>
-          <AlertIcon />
-          <Box flex="1">
-            <AlertTitle>Devices!</AlertTitle>
-            <AlertDescription display="block">
-              You can use detect Button trigger from raspberry PI, Temperature,
-              Stepper motor and so on{" "}
-              <span role="img" aria-label="custom">
-                🛠
-              </span>
-            </AlertDescription>
-          </Box>
-        </Alert>
-        <Alert status="success" rounded={"md"}>
-          <AlertIcon />
-          <Box flex="1">
-            <AlertTitle>Try!</AlertTitle>
-            <AlertDescription display="flex" alignItems="center">
-              Try your own Garden IoT{" "}
-              <NextLink href={"/started"} passHref={true}>
-                <Button
-                  as={Link}
-                  marginLeft="10px"
-                  variant={"outline"}
-                  rightIcon={<MdArrowForward />}
-                  _hover={{
-                    textDecoration: "none",
-                    bgGradient: "linear(to-l, #7928CA, #FF0080)",
-                  }}
-                >
-                  Get Started
-                </Button>
-              </NextLink>
-            </AlertDescription>
-          </Box>
-        </Alert>
-      </Stack>
+      <Box bg={"gray.900"} p={8} rounded={"md"}>
+        <SectionHeadline size={"lg"} as={"h3"}>
+          My Knowledge
+        </SectionHeadline>
+        <Text fontSize={"lg"} mb={6}>
+          These are the things I know about or use.
+        </Text>
+        <SimpleGrid columns={[1, 2, 4]} spacing={10}>
+          {skills.map((skill: any) => (
+            <Box key={skill.title}>
+              <Text fontWeight={"bold"} mb={2}>
+                {skill.title}
+              </Text>
+              <List>
+                {skill.knowledge.map((k: any) => (
+                  <ListItem key={k}>
+                    <ListIcon as={MdDone} color={"brandGreen.500"} />
+                    {k}
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </Box>
     </>
   );
 };
 
-export default WhoIAm;
+export default AboutPage;

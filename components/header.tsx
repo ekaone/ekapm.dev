@@ -41,14 +41,14 @@ export const Header = () => {
             fontWeight={600}
             mr={6}
           >
-            Garden IoT
+            Eka Prasetia
           </Link>
         </NextLink>
         <Navigation display={["none", "block"]} />
         <HStack spacing={[2, 4]} ml={"auto"}>
           <IconButton
             as={"a"}
-            href="https://github.com/ekaone/garden-iot"
+            href="https://github.com/ekaone/ekapm.dev"
             variant={"ghost"}
             size={"sm"}
             aria-label={"Github Link"}

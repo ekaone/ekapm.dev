@@ -22,22 +22,7 @@ export const SectionHero = () => {
             md: "3xl",
           }}
         >
-          This is Garden IoT, that can monitor your Garden with Raspberry PI
-          module.
-        </Text>
-        <Text
-          color={"white"}
-          fontSize={{
-            base: "lg",
-            sm: "2xl",
-            md: "3xl",
-          }}
-        >
-          You can find awesome stuff about{" "}
-          <Link href="https://www.raspberrypi.org/" color={"brandGreen.500"}>
-            Raspberry PI
-          </Link>
-          .
+          This page is under construction.
         </Text>
       </Stack>
       <NextLink href={"/about"} passHref={true}>
@@ -50,7 +35,7 @@ export const SectionHero = () => {
             bgGradient: "linear(to-l, #7928CA, #FF0080)",
           }}
         >
-          Learn more about Garden IoT
+          About
         </Button>
       </NextLink>
     </Section>
