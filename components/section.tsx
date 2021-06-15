@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box } from "@chakra-ui/react";
 
-export const Section = ({ children }) => {
+export const Section: FC = ({ children }) => {
   return (
     <Box
       py={{

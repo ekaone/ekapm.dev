@@ -1,3 +1,4 @@
+import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChakraProvider, DarkMode, Box, BoxProps } from "@chakra-ui/react";
 import Head from "next/head";
@@ -10,9 +11,9 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 
 // pre-defined styles for motion
-const MotionBox = motion.custom < BoxProps > Box;
+const MotionBox = motion<BoxProps>(Box);
 
-const App = ({ Component, pageProps, router }) => {
+const App = ({ Component, pageProps, router }: AppProps) => {
   return (
     <ChakraProvider theme={theme} resetCSS={true}>
       <Head>

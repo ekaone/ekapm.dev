@@ -1,7 +1,8 @@
 import React from "react";
 import Head from "next/head";
+import { Layout as PropsLayout } from "../types/layout";
 
-function Layout({ children, title }) {
+function Layout({ children, title }: PropsLayout) {
   return (
     <>
       <Head>
@@ -10,9 +11,9 @@ function Layout({ children, title }) {
           rel="alternate"
           type="application/rss+xml"
           title="Garden IoT"
-          href="https://garden-iot-eka.vercel.app/site.xml"
+          href="https://ekapm.dev/site.xml"
         />
-        <title>Garden IoT - {title}</title>
+        <title>Eka Prasetia - {title}</title>
       </Head>
       <main>{children}</main>
     </>

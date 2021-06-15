@@ -13,7 +13,7 @@ const links = [
   },
 ];
 
-export const Navigation = ({ ...restProps }) => {
+export const Navigation = ({ ...restProps }: BoxProps) => {
   const { pathname } = useRouter();
 
   return (

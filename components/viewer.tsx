@@ -1,6 +1,11 @@
 import React from "react";
 import { Flex, Box, chakra } from "@chakra-ui/react";
 
+interface ViewerProps {
+  name: string;
+  data: string;
+}
+
 function Viewer({ name, data }: ViewerProps) {
   return (
     <Flex p={50} w="full" alignItems="center" justifyContent="center">
