@@ -4,7 +4,7 @@ import { MdArrowForward } from "react-icons/md";
 
 import { Section } from "./section";
 
-export const HeroSection = () => {
+export const SectionHero = () => {
   return (
     <Section>
       <Heading as="h1" size="2xl" mb={8}>
