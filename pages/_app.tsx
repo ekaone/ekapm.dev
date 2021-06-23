@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import type { AppProps } from "next/app";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChakraProvider, DarkMode, Box, BoxProps } from "@chakra-ui/react";
@@ -9,11 +11,24 @@ import { theme } from "../theme";
 import { PageWrapper } from "../components/page-wrapper";
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
+import * as gtag from "../libs/gtag";
 
 // pre-defined styles for motion
 const MotionBox = motion<BoxProps>(Box);
 
 const App = ({ Component, pageProps, router }: AppProps) => {
+  const routerGTAG = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url);
+    };
+    routerGTAG.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      routerGTAG.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [routerGTAG.events]);
+
   return (
     <ChakraProvider theme={theme} resetCSS={true}>
       <Head>
