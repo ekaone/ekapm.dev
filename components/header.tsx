@@ -48,7 +48,7 @@ export const Header = () => {
         <HStack spacing={[2, 4]} ml={"auto"}>
           <IconButton
             as={"a"}
-            href="https://github.com/ekaone/ekapm.dev"
+            href="https://github.com/ekaone"
             variant={"ghost"}
             size={"sm"}
             aria-label={"Github Link"}

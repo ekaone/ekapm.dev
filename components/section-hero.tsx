@@ -10,7 +10,7 @@ export const SectionHero = () => {
       <Heading as="h1" size="2xl" mb={8}>
         Hi there{" "}
         <span role="img" aria-label="smile">
-          😀
+          👋
         </span>
       </Heading>
       <Stack spacing={3} maxW={"5xl"} mb={12}>
@@ -22,7 +22,13 @@ export const SectionHero = () => {
             md: "3xl",
           }}
         >
-          This page is under construction.
+          Thank you for visiting, I made a small{" "}
+          <Link href={"/project"}>project here</Link> as a study material and I
+          also wrote a short <Link href={"https://book.ekapm.dev/"}>notes</Link>{" "}
+          for the learning process, I hope you can feel comfortable here
+          <span role="img" aria-label="smile">
+            😀
+          </span>
         </Text>
       </Stack>
       <NextLink href={"/about"} passHref={true}>

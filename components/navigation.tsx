@@ -4,12 +4,20 @@ import { HStack, Link, BoxProps } from "@chakra-ui/react";
 
 const links = [
   {
+    label: "Project",
+    href: "/project",
+  },
+  {
+    label: "Book",
+    href: "https://book.ekapm.dev/",
+  },
+  {
     label: "About",
     href: "/about",
   },
   {
-    label: "Project",
-    href: "/project",
+    label: "Contact",
+    href: "https://forms.gle/cwyS5jzZBYfdZgYL9",
   },
 ];
 

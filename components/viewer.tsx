@@ -1,12 +1,15 @@
 import React from "react";
-import { Flex, Box, chakra } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { Flex, Box, chakra, Link } from "@chakra-ui/react";
 
 interface ViewerProps {
   name: string;
   data: string;
+  url: string;
+  thumbnail: string;
 }
 
-function Viewer({ name, data }: ViewerProps) {
+function Viewer({ name, data, url, thumbnail }: ViewerProps) {
   return (
     <Flex p={50} w="full" alignItems="center" justifyContent="center">
       <Flex
@@ -25,8 +28,7 @@ function Viewer({ name, data }: ViewerProps) {
           bgSize="cover"
           bgPos="center"
           style={{
-            backgroundImage:
-              "url(https://res.cloudinary.com/ddjsyskef/image/upload/v1616661700/iot/txqtlo5ttotfmfr7lmsz.jpg)",
+            backgroundImage: `url(${thumbnail})`,
           }}
         ></Box>
 
@@ -59,25 +61,28 @@ function Viewer({ name, data }: ViewerProps) {
             <chakra.span fontWeight="bold" color={"gray.800"}>
               {data}
             </chakra.span>
-            <chakra.button
-              bg="gray.800"
-              fontSize="xs"
-              fontWeight="bold"
-              color="white"
-              px={2}
-              py={1}
-              rounded="lg"
-              textTransform="uppercase"
-              _hover={{
-                bgGradient: "linear(to-l, #7928CA, #FF0080)",
-              }}
-              _focus={{
-                bgGradient: "linear(to-l, #7928CA, #FF0080)",
-                outline: "none",
-              }}
-            >
-              Trigger
-            </chakra.button>
+            <NextLink href={url} passHref={true}>
+              <chakra.button
+                as={Link}
+                bg="gray.800"
+                fontSize="xs"
+                fontWeight="bold"
+                color="white"
+                px={2}
+                py={1}
+                rounded="lg"
+                textTransform="uppercase"
+                _hover={{
+                  bgGradient: "linear(to-l, #7928CA, #FF0080)",
+                }}
+                _focus={{
+                  bgGradient: "linear(to-l, #7928CA, #FF0080)",
+                  outline: "none",
+                }}
+              >
+                Visit
+              </chakra.button>
+            </NextLink>
           </Flex>
         </Box>
       </Flex>

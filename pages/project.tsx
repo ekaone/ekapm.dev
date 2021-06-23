@@ -55,24 +55,23 @@ const Dashboard = () => {
 
   return (
     <>
-      <SectionHeadline>Scratch app</SectionHeadline>
+      <SectionHeadline>Welcome to my Scratch app</SectionHeadline>
 
       <Text mb={6} fontSize={"lg"}>
-        Here are IoT.
+        Here are I use my free time to make some scratch app
       </Text>
 
       <Stack spacing={5}>
         <Alert status="success" rounded={"md"}>
           <AlertIcon />
           <Box flex="1">
-            <AlertTitle>Monitoring!</AlertTitle>
+            <AlertTitle>Hint!</AlertTitle>
             <AlertDescription display="block">
-              Dashboard Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Architecto rem minus eaque dicta incidunt aliquam soluta neque
-              quod recusandae? Maxime aliquam error quo sapiente labore earum,
-              excepturi voluptas expedita cum{" "}
+              Technology evolution are very fast and dynamic, here I try to make
+              something that uses the latest technology, hopefully it can be
+              useful and enjoy{" "}
               <span role="img" aria-label="pc">
-                💻
+                😀
               </span>
             </AlertDescription>
           </Box>
@@ -82,6 +81,7 @@ const Dashboard = () => {
             //@ts-ignore
             <Box key={device.id}>
               <Viewer
+                url={device.url}
                 name={
                   //@ts-ignore
                   device.name
@@ -90,6 +90,7 @@ const Dashboard = () => {
                   //@ts-ignore
                   device.value
                 }
+                thumbnail={device.thumbnail}
               />
             </Box>
           ))}
