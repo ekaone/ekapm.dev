@@ -30,7 +30,18 @@ const skills: SkillsType = [
     title: "Frontend",
     knowledge: ["React", "Next.js", "Gatsby.js", "Hugo"],
   },
-  ,
+  {
+    title: "Backend",
+    knowledge: ["NodeJS", "Python", "Golang"],
+  },
+  {
+    title: "Database RDBMS",
+    knowledge: ["MySQL", "PostgreSQL"],
+  },
+  {
+    title: "Database NoSQL",
+    knowledge: ["Redis", "MongoDB", "Firebase", "CouchDB"],
+  },
   {
     title: "Design",
     knowledge: ["CSS", "Chakra UI", "Tailwind CSS", "CSS in JS"],
@@ -43,6 +54,59 @@ const skills: SkillsType = [
       "React Testing Library",
       "Cypress",
     ],
+  },
+  {
+    title: "Architecture",
+    knowledge: ["Microservices", "Monolith"],
+  },
+  {
+    title: "Containerization",
+    knowledge: ["Docker"],
+  },
+  {
+    title: "Cluster Management",
+    knowledge: ["Kubernetes (K8s)", "Swarm"],
+  },
+  {
+    title: "Cloud",
+    knowledge: ["Google Cloud Platform", "AWS"],
+  },
+  {
+    title: "Transport Layer ",
+    knowledge: [
+      "REST (RPI)",
+      "gRPC (RPI)",
+      "RabbitMQ (Messaging)",
+      "Kafka (Messaging)",
+    ],
+  },
+  {
+    title: "Data Visualization",
+    knowledge: ["MS Power BI", "Tableau", "Data Studio", "Metabase"],
+  },
+  {
+    title: "Tools Project Management",
+    knowledge: ["Jira", "Trello", "Notion", "ClickUp", "MS Project"],
+  },
+  {
+    title: "Tools Infrastructure",
+    knowledge: ["ArgoCD", "Terraform", "Ansible", "Istio"],
+  },
+  {
+    title: "Tools CI/CD",
+    knowledge: ["GitHub Action", "CircleCI", "TravisCI"],
+  },
+  {
+    title: "Tools SDLC",
+    knowledge: ["Git", "GitOps (CD)"],
+  },
+  {
+    title: "Tools Security",
+    knowledge: ["OAuth", "JWT", "Vault"],
+  },
+  {
+    title: "API Docs",
+    knowledge: ["OpenAPI", "Swagger"],
   },
 ];
 
